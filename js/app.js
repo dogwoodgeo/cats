@@ -5,14 +5,16 @@ require ([
   'esri/views/MapView',
   'esri/Basemap',
   'esri/layers/VectorTileLayer',
-  'esri/layers/FeatureLayer'
+  'esri/layers/FeatureLayer',
+  'esri/widgets/Home'
 ], 
 function(
   Map, 
   MapView, 
   Basemap, 
   VectorTileLayer, 
-  FeatureLayer
+  FeatureLayer,
+  Home
 ) {
 
   //* Picture Marker Symbol
@@ -53,6 +55,11 @@ function(
     zoom: 4
 
   });
+
+  const homeBtn = new Home({
+    view: view
+  });
+  view.ui.add(homeBtn, 'top-left');
 
   const textContent = '<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + '<br></br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
   '<br></br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
