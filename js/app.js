@@ -61,18 +61,18 @@ function(
   });
   view.ui.add(homeBtn, 'top-left');
 
-  const textContent = '<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + '<br></br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Collar:</span> {COLLAR}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Male/Female:</span> {MF}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Age Class:</span> {AGECLASS}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Interact with cat?:</span> {INTERACTION}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Feral?:</span> {FERAL} ' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Date:</span> {DATE_FIRST}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Multiple Sightings:</span> {MULT_SIGHTING}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Date of Last Sighting:</span> {DATE_LAST}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Sighting Number:</span> {SIGHT_NUM}' + '<br></br><span style="color: #b2495a ; font-weight: bold">Photo:</span> {PIC}' + 
-  '<br></br><span style="color: #b2495a ; font-weight: bold">Location:</span> {LOC_DESC}' + 
+  const textContent = '<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + '<br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
+  '<br><span style="color: #b2495a ; font-weight: bold">Collar:</span> {COLLAR}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Male/Female:</span> {MF}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Age Class:</span> {AGECLASS}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Interact with cat?:</span> {INTERACTION}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Feral?:</span> {FERAL} ' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Date:</span> {DATE_FIRST}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Multiple Sightings:</span> {MULT_SIGHTING}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Date of Last Sighting:</span> {DATE_LAST}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Sighting Number:</span> {SIGHT_NUM}' + '<br><span style="color: #b2495a ; font-weight: bold">Photo:</span> {PIC}' + 
+  '<br><span style="color: #b2495a ; font-weight: bold">Location:</span> {LOC_DESC}' + 
   '<br></br><span style="color: #b2495a">{COMMENTS}</span>';
 
   const popupTemplate = {
