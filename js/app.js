@@ -70,44 +70,16 @@ function(
     content: getURL,
     fieldInfos: [
       {
-        fieldName: 'TYPE'
-      }, {
-        fieldName: 'FRIENDLY'
-      }, {
         fieldName: 'DATE_FIRST',
         format: {
           dateFormat: 'day-short-month-year'
         }
       }, {
-        fieldName: 'COLLAR'
-      }, {
-        fieldName: 'INTERACTION'
-      }, {
-        fieldName: 'FERAL'
-      }, {
-        fieldName: 'COMMENTS'
-      }, {
         fieldName: 'DATE_LAST',
         format: {
           dateFormat: 'day-short-month-year'
         }
-      }, {
-        fieldName: 'LOC_DESC'
-      }, {
-        fieldName: 'MULT_SIGHTING'
-      }, {
-        fieldName: 'PIC'
-      }, {
-        fieldName: 'SUBMIT_BY'
-      }, {
-        fieldName: 'MF'
-      }, {
-        fieldName: 'PIC_URL'
-      }, {
-        fieldName: 'NAME'
       }
-
-
     ]
     // [{type: 'text', text: textContent}, {type: 'attachments'},]
 
@@ -121,40 +93,29 @@ function(
   //* Add the layer to the map
   map.add(catsFL); 
 
+
+  const popupHTML = '<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
+        '<br><span style="color: #b2495a ; font-weight: bold">Collar:</span> {COLLAR}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Male/Female:</span> {MF}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Age Class:</span> {AGECLASS}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Interact with cat?:</span> {INTERACTION}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Feral?:</span> {FERAL} ' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Date:</span> {DATE_FIRST}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Multiple Sightings:</span> {MULT_SIGHTING}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Date of Last Sighting:</span> {DATE_LAST}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Sighting Number:</span> {SIGHT_NUM}' + '<br><span style="color: #b2495a ; font-weight: bold">Photo:</span> {PIC}' + 
+        '<br><span style="color: #b2495a ; font-weight: bold">Location:</span> {LOC_DESC}' + 
+        '<br><br><span style="color: #b2495a">{COMMENTS}</span>';
+
   function getURL(feature) { 
     let url = feature.graphic.attributes.PIC_URL;
     console.log (url);
     if (url === 'null') {
-      return ('<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
-        '<br><span style="color: #b2495a ; font-weight: bold">Collar:</span> {COLLAR}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Male/Female:</span> {MF}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Age Class:</span> {AGECLASS}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Interact with cat?:</span> {INTERACTION}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Feral?:</span> {FERAL} ' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Date:</span> {DATE_FIRST}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Multiple Sightings:</span> {MULT_SIGHTING}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Date of Last Sighting:</span> {DATE_LAST}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Sighting Number:</span> {SIGHT_NUM}' + '<br><span style="color: #b2495a ; font-weight: bold">Photo:</span> {PIC}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Location:</span> {LOC_DESC}' + 
-        '<br></br><span style="color: #b2495a">{COMMENTS}</span>')
+      return (popupHTML)
     } else {
-      return ('<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
-        '<br><span style="color: #b2495a ; font-weight: bold">Collar:</span> {COLLAR}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Male/Female:</span> {MF}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Age Class:</span> {AGECLASS}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Interact with cat?:</span> {INTERACTION}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Feral?:</span> {FERAL} ' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Date:</span> {DATE_FIRST}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Multiple Sightings:</span> {MULT_SIGHTING}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Date of Last Sighting:</span> {DATE_LAST}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Sighting Number:</span> {SIGHT_NUM}' + '<br><span style="color: #b2495a ; font-weight: bold">Photo:</span> {PIC}' + 
-        '<br><span style="color: #b2495a ; font-weight: bold">Location:</span> {LOC_DESC}' + 
-        '<br></br><span style="color: #b2495a">{COMMENTS}</span><br></br>' + 
-        '<img src="' + url + '" alt="CAT"></img>')
+      return (popupHTML + '<br><br><img src="' + url + '" alt="CAT"></img>')
     }; 
   }
 });
