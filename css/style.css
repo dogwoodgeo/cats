@@ -14,6 +14,6 @@ body,
   padding: 20px;
   overflow: auto;
   word-wrap: normal;
-  width: fit-content;
+  width: 300px;
   height: auto;  
 }
