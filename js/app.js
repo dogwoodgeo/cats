@@ -7,7 +7,8 @@ require ([
   'esri/Basemap',
   'esri/layers/VectorTileLayer',
   'esri/layers/FeatureLayer',
-  'esri/widgets/Home'
+  'esri/widgets/Home',
+  'esri/widgets/Expand'
 ], 
 function(
   Map, 
@@ -15,7 +16,8 @@ function(
   Basemap, 
   VectorTileLayer, 
   FeatureLayer,
-  Home
+  Home,
+  Expand
 ) {
 
   //* Picture Marker Symbol
@@ -44,11 +46,12 @@ function(
     baseLayers: [vtLayer]
   });
  
-
+  //* create the Map object
   const map = new Map({
     basemap: myBasemap
   });
 
+  //* Creat the Map View object
   view = new MapView({
     container: 'viewDiv',
     map: map,
@@ -57,13 +60,25 @@ function(
 
   });
 
+  //* Home widget
   const homeBtn = new Home({
     view: view
   });
   view.ui.add(homeBtn, 'top-left');
 
-  // const textContent = **Add HTML Here**
+  //* Info panel expand widget
+  const expandContent = '<h3 style="color: #a78176">Cat Sightings</h3>' + 
+                        '<span style="color: #b2495a">Some text here</span>'
 
+  infoExpand = new Expand({
+    expandIconClass: 'esri-icon-description',
+    view: view,
+    content: expandContent,
+    expanded: false,
+  })
+  view.ui.add(infoExpand, 'top-right');
+
+  //* Popup object
   const popupTemplate = {
     title: '<span style="color: #a78176 ; font-weight: 900">Cat Information</span>',
     outFields: ['*'],
@@ -81,9 +96,9 @@ function(
         }
       }
     ]
-    // [{type: 'text', text: textContent}, {type: 'attachments'},]
-
   };
+
+  //* Feature Layer
   const catsFL = new FeatureLayer({
     url: "https://services.arcgis.com/mJnFdAAVXxEXrSpL/arcgis/rest/services/CATS/FeatureServer",
     popupTemplate: popupTemplate,
@@ -93,7 +108,7 @@ function(
   //* Add the layer to the map
   map.add(catsFL); 
 
-
+  //* Popup Content
   const popupHTML = '<span style="color: #b2495a ; font-weight: bold">Type:</span> {TYPE}' + 
         '<br><span style="color: #b2495a ; font-weight: bold">Name:</span> {NAME}' + 
         '<br><span style="color: #b2495a ; font-weight: bold">Friendly (0-5):</span> {FRIENDLY}' +
@@ -119,3 +134,5 @@ function(
     }; 
   }
 });
+
+//* 'esri-icon-description'
