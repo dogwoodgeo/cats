@@ -12,8 +12,8 @@ body,
   opacity: 1;
   background-color:#FCF6F0; 
   padding: 20px;
-  overflow: scroll;
+  overflow: auto;
   word-wrap: normal;
-  width: 300px;
+  width: fit-content;
   height: auto;  
 }
