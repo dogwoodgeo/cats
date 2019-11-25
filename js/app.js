@@ -70,7 +70,7 @@ function(
   const expandContent = '<h3 style="color: #a78176">Cat Sightings</h3>' + 
                         '<span style="color: #b2495a">' + 
                         'This is a fun side project I developed to track the cats I observe and interact with while living my life. Most are located in Central Arkansas, but with other regions included as I travel.<br><br>' + 
-                        'I use this project to experiment with aspects of web development. Mostly relating to WebGIS and the ArcGIS API for Javascript.' +
+                        'I use this project to experiment with aspects of web development. Mostly relating to WebGIS and the ArcGIS API for Javascript. Basemap was styled with Esri\'s ArcGIS Vector Tile Style Editor.' +
                         '<br><br>Most of the cats are observed by me (Bradley Jones), but some data may have been collected by my daughter, Maggie, or my wife, Kelli.<br><br></span>' + 
                         '<span style="color: #a78176 ; font-weight: 900">Contact</span><br>' +
                         '<span style="color: #b2495a">Bradley Jones</span><br>' +
