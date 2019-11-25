@@ -115,7 +115,7 @@ function(
     if (url === 'null') {
       return (popupHTML)
     } else {
-      return ( '<img src="' + url + '" alt="CAT"></img><br>' + popupHTML )
+      return (`<img src="${url}" alt="CAT"></img><br>${popupHTML}` )
     }; 
   }
 });
