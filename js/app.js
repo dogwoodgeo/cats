@@ -111,7 +111,7 @@ function(
 
   //* Feature Layer
   const catsFL = new FeatureLayer({
-    url: "https://services.arcgis.com/mJnFdAAVXxEXrSpL/arcgis/rest/services/CATS/FeatureServer",
+    url: 'https://services.arcgis.com/mJnFdAAVXxEXrSpL/arcgis/rest/services/CATS_VIEW/FeatureServer',
     popupTemplate: popupTemplate,
     renderer: flRenderer,
   });
